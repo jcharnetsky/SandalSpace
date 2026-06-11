@@ -185,3 +185,15 @@ code {
     animation: none !important;
   }
 }
+.bg-dark {
+  background: #18181b;
+}
+.bg-dark-secondary {
+  background: #27272A;
+}
+.text-dark {
+  color: #fafafa;
+}
+.text-dark-secondary {
+  color: #A1A1AA;
+}

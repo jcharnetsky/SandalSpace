@@ -1,24 +1,18 @@
 import { serve } from "bun";
 import index from "./index.html";
+import articles from './test/resources/articles.json'
 
 const server = serve({
   routes: {
     // Serve index.html for all unmatched routes.
     "/*": index,
 
-    "/api/hello": {
+    "/api/articles": {
       async GET(req) {
         return Response.json({
-          message: "Hello, world!",
-          method: "GET",
+          articles: articles,
         });
-      },
-      async PUT(req) {
-        return Response.json({
-          message: "Hello, world!",
-          method: "PUT",
-        });
-      },
+      }
     },
 
     "/api/hello/:name": async req => {

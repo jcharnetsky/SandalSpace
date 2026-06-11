@@ -1,0 +1,21 @@
+ul {
+    list-style-type: none;
+}
+
+.article-preview {
+  padding: 2rem;  
+  margin: 2rem;
+}
+
+.article-title {
+    margin-top: 0;
+    text-align: justify;
+}
+
+.article-date-published {
+    text-align: justify;
+}
+
+.article-body {
+    text-align: justify;
+}
