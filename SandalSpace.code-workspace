@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"prettier.configPath": ".prettierrc",
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	}
+}
