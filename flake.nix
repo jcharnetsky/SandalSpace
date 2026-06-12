@@ -17,7 +17,7 @@
           ];
 
           shellHook = ''
-            echo "SandalStrap development environment"
+            echo "Blather development environment"
           '';
         };
       });
