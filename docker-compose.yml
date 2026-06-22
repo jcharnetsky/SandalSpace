@@ -1,0 +1,8 @@
+services:
+  mariadb:
+    image: "mariadb:${MARIADB_VERSION}"
+    restart: "always"
+    env_file:
+      - path: ./.env
+    ports:
+      - "3306:3306"

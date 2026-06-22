@@ -1,0 +1,14 @@
+GET http://localhost:3000/api/articles HTTP/1.1
+
+###
+POST http://localhost:3000/api/articles HTTP/1.1
+content-type: application/json
+
+{
+    "authorId": 1,
+    "title": "Test article 24",
+    "body": "Some text"
+}
+
+###
+DELETE http://localhost:3000/api/articles/1 HTTP/1.1

@@ -1,7 +1,7 @@
-import type Article from "@/Article/Article";
-import "../index.css";
+import type { Article } from "@/component/article/article";
+import "../../index.css";
 import "./ArticlePreview.css";
-import TagList from "@/Tag/TagList";
+import TagList from "@/component/tag/tagList";
 
 export default function ArticlePreview({ article }: { article: Article }) {
   const previewCharacterLimit = 500;
@@ -20,7 +20,7 @@ export default function ArticlePreview({ article }: { article: Article }) {
     <div className="bg-dark article-preview">
       <h1 className="text-dark article-title">{article.title}</h1>
       <h4 className="text-dark-secondary article-date-published">
-        {new Date(article.datePublished).toLocaleDateString()}
+        {new Date(article.created).toLocaleDateString()}
       </h4>
       <p className="text-dark-secondary article-body">{truncatedBody}</p>
       <TagList tags={article?.tags} />

@@ -1,6 +1,5 @@
 import { APITester } from "./APITester";
-import ArticleList from "./Article/ArticleList";
-import ArticleListContainer from "./Article/ArticleListContainer";
+import ArticleListContainer from "./component/article/articleListContainer";
 import "./index.css";
 
 import logo from "./logo.svg";

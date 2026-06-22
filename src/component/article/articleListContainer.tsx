@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
-import type Article from "./Article";
-import ArticleList from "./ArticleList";
+import type { Article } from "./article";
+import ArticleList from "./articleList";
 
 export default function ArticleListContainer() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [articles, setArticles] = useState<Article[]>();
 
   useEffect(() => {
-    fetch("/api/articles")
-      .then((res) => res.json())
-      .then((res) => {
-        setArticles(res.articles as Article[]);
-      })
-      .finally(() => setIsLoading(false));
-
-    return;
+    fetch("/api/articles").then((res) =>
+      res
+        .json()
+        .then((res) => {
+          console.log(`Articles: ${JSON.stringify(res)}`);
+          setArticles(res as Article[]);
+        })
+        .finally(() => setIsLoading(false)),
+    );
   }, []);
 
   return isLoading ? (

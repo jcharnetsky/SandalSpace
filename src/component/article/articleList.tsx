@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
-import "../index.css";
-import ArticlePreview from "./ArticlePreview";
-import type Article from "@/Article/Article";
+import "../../index.css";
+import type { Article } from "./article";
+import ArticlePreview from "./articlePreview";
 
 export function ArticleList({ articles }: { articles: Article[] }) {
   return (
