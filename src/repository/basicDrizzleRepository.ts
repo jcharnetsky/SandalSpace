@@ -22,4 +22,7 @@ export class BasicDrizzleRepository {
 
   deleteById = async (id: number) =>
     db.delete(this.table).where(eq(this.table.id, id));
+
+  updateById = async (id: number, value: typeof this.table.$inferInsert) =>
+    db.update(this.table).set(value).where(eq(this.table.id, id));
 }

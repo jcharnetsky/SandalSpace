@@ -6,7 +6,8 @@ import {
   text,
   timestamp,
   mysqlTable,
-  serial,
+  json,
+  varchar,
 } from "drizzle-orm/mysql-core";
 
 // Database table
@@ -16,10 +17,11 @@ export const articles = mysqlTable("Articles", {
     .notNull()
     .references(() => users.id),
   title: text().notNull(),
-  body: text().notNull(),
+  body: json().notNull(),
+  exerpt: text().notNull(),
   published: boolean(),
   created: timestamp().generatedAlwaysAs(sql`(CURRENT_TIMESTAMP)`),
-  update: timestamp()
-    .generatedAlwaysAs(sql`(CURRENT_TIMESTAMP)`)
+  updated: timestamp()
+    .defaultNow()
     .$onUpdate(() => sql`(CURRENT_TIMESTAMP)`),
 });

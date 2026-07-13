@@ -1,0 +1,454 @@
+{
+  "version": "6",
+  "dialect": "mysql",
+  "id": "8d5aa463-d26a-490e-958c-dde49fcbbc2f",
+  "prevIds": [
+    "4879a6e8-ce57-4dd9-93c3-e0decd6dce73"
+  ],
+  "ddl": [
+    {
+      "name": "Articles",
+      "entityType": "tables"
+    },
+    {
+      "name": "ArticlesTags",
+      "entityType": "tables"
+    },
+    {
+      "name": "Tags",
+      "entityType": "tables"
+    },
+    {
+      "name": "Users",
+      "entityType": "tables"
+    },
+    {
+      "type": "int",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "Articles"
+    },
+    {
+      "type": "int",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "author_id",
+      "entityType": "columns",
+      "table": "Articles"
+    },
+    {
+      "type": "text",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "title",
+      "entityType": "columns",
+      "table": "Articles"
+    },
+    {
+      "type": "blob",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "body",
+      "entityType": "columns",
+      "table": "Articles"
+    },
+    {
+      "type": "boolean",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "published",
+      "entityType": "columns",
+      "table": "Articles"
+    },
+    {
+      "type": "timestamp",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": {
+        "as": "(CURRENT_TIMESTAMP)",
+        "type": "virtual"
+      },
+      "name": "created",
+      "entityType": "columns",
+      "table": "Articles"
+    },
+    {
+      "type": "timestamp",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": {
+        "as": "(CURRENT_TIMESTAMP)",
+        "type": "virtual"
+      },
+      "name": "update",
+      "entityType": "columns",
+      "table": "Articles"
+    },
+    {
+      "type": "int",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "article_id",
+      "entityType": "columns",
+      "table": "ArticlesTags"
+    },
+    {
+      "type": "int",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "tag_id",
+      "entityType": "columns",
+      "table": "ArticlesTags"
+    },
+    {
+      "type": "timestamp",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": {
+        "as": "(CURRENT_TIMESTAMP)",
+        "type": "virtual"
+      },
+      "name": "created",
+      "entityType": "columns",
+      "table": "ArticlesTags"
+    },
+    {
+      "type": "timestamp",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": {
+        "as": "(CURRENT_TIMESTAMP)",
+        "type": "virtual"
+      },
+      "name": "update",
+      "entityType": "columns",
+      "table": "ArticlesTags"
+    },
+    {
+      "type": "int",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "Tags"
+    },
+    {
+      "type": "varchar(64)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "value",
+      "entityType": "columns",
+      "table": "Tags"
+    },
+    {
+      "type": "timestamp",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": {
+        "as": "(CURRENT_TIMESTAMP)",
+        "type": "virtual"
+      },
+      "name": "created",
+      "entityType": "columns",
+      "table": "Tags"
+    },
+    {
+      "type": "timestamp",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": {
+        "as": "(CURRENT_TIMESTAMP)",
+        "type": "virtual"
+      },
+      "name": "update",
+      "entityType": "columns",
+      "table": "Tags"
+    },
+    {
+      "type": "int",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "Users"
+    },
+    {
+      "type": "text",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "username",
+      "entityType": "columns",
+      "table": "Users"
+    },
+    {
+      "type": "varchar(320)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "email",
+      "entityType": "columns",
+      "table": "Users"
+    },
+    {
+      "type": "text",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "password",
+      "entityType": "columns",
+      "table": "Users"
+    },
+    {
+      "type": "timestamp",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": {
+        "as": "(CURRENT_TIMESTAMP)",
+        "type": "virtual"
+      },
+      "name": "created",
+      "entityType": "columns",
+      "table": "Users"
+    },
+    {
+      "type": "timestamp",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": {
+        "as": "(CURRENT_TIMESTAMP)",
+        "type": "virtual"
+      },
+      "name": "update",
+      "entityType": "columns",
+      "table": "Users"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "Articles",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "article_id"
+      ],
+      "name": "PRIMARY",
+      "table": "ArticlesTags",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "Tags",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "Users",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        {
+          "value": "value",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": false,
+      "name": "Tags_value_unique",
+      "table": "Tags",
+      "entityType": "indexes"
+    },
+    {
+      "columns": [
+        {
+          "value": "email",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": false,
+      "name": "Users_email_unique",
+      "table": "Users",
+      "entityType": "indexes"
+    },
+    {
+      "columns": [
+        "author_id"
+      ],
+      "tableTo": "Users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "nameExplicit": false,
+      "name": "Articles_author_id_Users_id_fk",
+      "entityType": "fks",
+      "table": "Articles"
+    },
+    {
+      "columns": [
+        "article_id"
+      ],
+      "tableTo": "Articles",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "nameExplicit": false,
+      "name": "ArticlesTags_article_id_Articles_id_fk",
+      "entityType": "fks",
+      "table": "ArticlesTags"
+    },
+    {
+      "columns": [
+        "tag_id"
+      ],
+      "tableTo": "Tags",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "nameExplicit": false,
+      "name": "ArticlesTags_tag_id_Tags_id_fk",
+      "entityType": "fks",
+      "table": "ArticlesTags"
+    }
+  ],
+  "renames": []
+}

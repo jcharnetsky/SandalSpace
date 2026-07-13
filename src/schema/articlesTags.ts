@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { int, mysqlTable, serial, timestamp } from "drizzle-orm/mysql-core";
+import { int, mysqlTable, timestamp } from "drizzle-orm/mysql-core";
 import { articles } from "./articles";
 import { tags } from "./tags";
 
@@ -12,7 +12,7 @@ export const articlesTags = mysqlTable("ArticlesTags", {
     .primaryKey()
     .references(() => tags.id),
   created: timestamp().generatedAlwaysAs(sql`(CURRENT_TIMESTAMP)`),
-  update: timestamp()
-    .generatedAlwaysAs(sql`(CURRENT_TIMESTAMP)`)
+  updated: timestamp()
+    .defaultNow()
     .$onUpdate(() => sql`(CURRENT_TIMESTAMP)`),
 });

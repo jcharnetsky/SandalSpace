@@ -1,3 +1,4 @@
+import React from "react";
 import "../../index.css";
 import type { Article } from "./article";
 import ArticlePreview from "./articlePreview";
